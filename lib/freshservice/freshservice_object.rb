@@ -1,5 +1,5 @@
-module Freshdesk
-  class FreshdeskObject
+module Freshservice
+  class FreshserviceObject
     def initialize(endpoint)
       @endpoint = endpoint
     end
@@ -7,7 +7,7 @@ module Freshdesk
     attr_reader :endpoint
 
     def resource(params: {}, id: nil)
-      Freshdesk::Resource.new(endpoint, params, id)
+      Freshservice::Resource.new(endpoint, params, id)
     end
   end
 end

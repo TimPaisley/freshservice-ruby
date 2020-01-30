@@ -1,16 +1,16 @@
 require "rest-client"
 require "json"
 
-module Freshdesk
+module Freshservice
   class Resource
     def initialize(endpoint, params = {}, id = nil)
       @endpoint             = endpoint
       @params               = params
       @id                   = id
-      @domain               = Freshdesk.domain
-      @user_name_or_api_key = Freshdesk.user_name_or_api_key
-      @password_or_x        = Freshdesk.password_or_x
-      @api_version          = Freshdesk.api_version
+      @domain               = Freshservice.domain
+      @user_name_or_api_key = Freshservice.user_name_or_api_key
+      @password_or_x        = Freshservice.password_or_x
+      @api_version          = Freshservice.api_version
 
       @resource ||= RestClient::Resource.new(
         api_url,
@@ -22,7 +22,7 @@ module Freshdesk
     attr_reader :endpoint, :params
 
     def api_url
-      "https://#{@domain}.freshdesk.com/api/#{@api_version}#{@endpoint}"
+      "https://#{@domain}.freshservice.com/api/#{@api_version}#{@endpoint}"
     end
 
     def json_payload
@@ -57,7 +57,7 @@ module Freshdesk
 
     def api_error_message(e)
       "API Error: Your request is not successful." \
-      "If you are not able to debug this error properly, mail us at support@freshdesk.com with the follwing X-Request-Id" \
+      "If you are not able to debug this error properly, mail us at support@freshservice.com with the follwing X-Request-Id" \
       "X-Request-Id : #{e.response.headers[:x_request_id]}" \
       "Response Code: #{e.response.code} Response Body: #{e.response.body}"
     end

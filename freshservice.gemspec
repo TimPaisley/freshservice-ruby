@@ -2,19 +2,19 @@
 # frozen_string_literal: true
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'freshdesk/version'
+require 'freshservice/version'
 
 Gem::Specification.new do |s|
-  s.name          = "freshdesk-ruby"
-  s.version       = Freshdesk::VERSION
-  s.authors       = ["Akira Narita"]
-  s.email         = ["aki.d.sc@gmail.com"]
+  s.name          = "freshservice-ruby"
+  s.version       = Freshservice::VERSION
+  s.authors       = ["Tim Paisley"]
+  s.email         = ["tepaisley@gmail.com"]
   s.required_ruby_version     = ">= 2.2.2"
   s.required_rubygems_version = ">= 1.8.11"
 
-  s.summary       = %q{A Ruby API client for Freshdesk API v2}
-  s.description   = %q{A Ruby API client for Freshdesk API v2}
-  s.homepage      = "https://github.com/akinrt/freshdesk-ruby"
+  s.summary       = %q{A Ruby API client for FreshService API v2}
+  s.description   = %q{A Ruby API client for FreshService API v2}
+  s.homepage      = "https://github.com/timpaisley/freshservice-ruby"
   s.license       = "MIT"
 
   s.files         = `git ls-files -z`.split("\x0").reject do |f|

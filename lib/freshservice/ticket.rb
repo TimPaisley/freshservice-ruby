@@ -1,12 +1,8 @@
-module Freshdesk
-  class Ticket < FreshdeskObject
+module Freshservice
+  class Ticket < FreshserviceObject
     class << self
       def create_a_ticket(params: {})
         new("/tickets").resource(params: params).post
-      end
-
-      def create_an_outbound_email(params: {})
-        new("/tickets/outbound_email").resource(params: params).post
       end
 
       def view_a_ticket(id:, query: "")
@@ -39,10 +35,6 @@ module Freshdesk
 
       def list_all_time_entries_of_a_ticket(id:)
         new("/tickets/#{id}/time_entries").resource(id: id).get
-      end
-
-      def list_all_satisfaction_ratings_of_a_ticket(ticket_id:)
-        new("/tickets/#{ticket_id}/satisfaction_ratings").resource.get
       end
     end
   end
